@@ -1,0 +1,52 @@
+<main class="container">
+    <h1 class="text-center mt-2 mb-2"><img src="assets/logo.png" alt="" width="250"></h1>
+
+    <div class="d-flex justify-content-center">
+        <img *ngFor="let pokemon of allPokemons" src="assets/pok.png" alt="" [title]="pokemon.name" width="40" class="m-1" (click)="viewPokemon(pokemon)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    </div>
+
+    <h5 class="text-center"><strong>Vous disposez de {{allPokemons.length}} pokemon</strong></h5>
+
+    <div class="col-md-5 mx-auto mt-2">
+        <input type="text" placeholder="Rechercher" class="form-control" #event (keyup)="searchFilter(event.value)">
+    </div>
+
+    <section class="row mx-auto">
+        <div class="col-md-2 mt-2 p-2 d-flex justify-content-center mx-auto myCard" *ngFor="let pokemon of allPokemons" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="viewPokemon(pokemon)">
+            <img [src]="pokemon.picture" alt="" width="170">
+        </div>
+    </section>
+</main>
+
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">{{pokemonSelected.name}}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex">
+            <div class="row">
+                <div class="col-md-4">
+                    <img [src]="pokemonSelected.picture" alt="" width="100%">
+                </div>
+                <div class="col-md-8">
+                    <p>HP : {{pokemonSelected.hp}}</p>
+                    <p>CP : {{pokemonSelected.cp}}</p>
+                    <p>Type : {{pokemonSelected.type}}</p>
+                    <p>Date de création : {{pokemonSelected.created | date: 'dd/M/yyyy'}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+          <button type="button" class="btn btn-success" (click)="removePokemon()" data-bs-dismiss="modal">Relacher</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" [routerLink]="['edit',pokemonSelected.id]">Modifier</button>
+        </div>
+      </div>
+    </div>
+</div>

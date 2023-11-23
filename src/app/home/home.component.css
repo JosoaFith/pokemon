@@ -1,0 +1,21 @@
+.myCard {
+    border: solid 1px #cccccc8e;
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    margin: 10px!important;
+    padding: 10px!important;
+    background-color: rgba(240, 255, 255, 0.196);
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.myCard:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.438);
+}

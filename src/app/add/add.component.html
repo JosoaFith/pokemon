@@ -1,0 +1,33 @@
+<section class="container">
+    <h1 class="text-center text-muted mb-2 mt-2"></h1>
+
+
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="mt-2">
+                <label for="">Nom</label>
+                <input type="text" class="form-control" placeholder="Nom" [(ngModel)]="newPokemon.name">
+            </div>
+            <div class="mt-2">
+                <label for="">Hp</label>
+                <input type="text" class="form-control" placeholder="Hp" [(ngModel)]="newPokemon.hp">
+            </div>
+            <div class="mt-2">
+                <label for="">Cp</label>
+                <input type="text" class="form-control" placeholder="Cp" [(ngModel)]="newPokemon.cp">
+            </div>
+            <div class="mt-2">
+                <label for="">Illustration</label>
+                <input type="text" class="form-control" placeholder="Illustration" [(ngModel)]="newPokemon.picture">
+            </div>
+            <div class="mt-2">
+                <label for="">Type</label>
+                <input type="text" class="form-control" placeholder="Type" [(ngModel)]="newPokemon.type">
+            </div>
+            <div class="mt-2">
+                <button class="btn btn-success mt-2 btn-block w-100" (click)="addPokemon()">Valider</button>
+            </div>
+        </div>
+    </div>
+</section>
+

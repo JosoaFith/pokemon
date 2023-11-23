@@ -1,0 +1,6 @@
+nav {
+    background-color: rgba(223, 0, 0, 0.589)!important;
+    border-radius: 20px;
+    margin: 20px;
+    backdrop-filter: blur(10px);
+}
